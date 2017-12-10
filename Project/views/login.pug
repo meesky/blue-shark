@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    include includes/header.pug
+
+    h2(class='page-header') Account Login
+    form(method='post' action='/users/login')
+        div.form-group
+            label Username
+            input(class='form-control', type='text', placeholder='Username', name='username')
+        div.form-group
+            label Password
+            input(class='form-control', type='password', placeholder='Password', name='password')
+        button(class='btn btn-info', type='submit') Submit
+    include includes/footer.pug

@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+    body
+        div.container
+            block content
+                if success_msg
+                    .alert.alert-success
+                        div= success_msg
+                if error_msg
+                    .alert.alert-danger
+                        div= error_msg
+                if error
+                    .alert.alert-danger
+                        div= error

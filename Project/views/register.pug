@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    include includes/header.pug
+
+    h2(class='page-header') Register
+
+    if errors
+        .alert.alert-danger
+            for error in errors
+                div=error.msg
+
+    form(method='post' action='/users/register')
+        div.form-group
+            label Name
+            input(class='form-control', type='text', placeholder='Name', name='name')
+        div.form-group
+            lable Username
+            input(class='form-control', type='text', placeholder='Username', name='username')
+        div.form-group
+            lable Email
+            input(class='form-control', type='email', placeholder='Email', name='email')
+        div.form-group
+            lable Password
+            input(class='form-control', type='password' placeholder='Password', name='password')
+        div.form-group
+            lable Confirm Password
+            input(class='form-control', type='password' placeholder='Re-Password', name='re_password')
+        button(class='btn btn-success', type='submit') Submit
+
+    include includes/footer.pug
